@@ -14,8 +14,10 @@
             let description;
             $.get("/products/" + id + "/description", function (data) {
                 description = data;
-                $.get("/products/" + id + "/inventory", function (data) {
-                    if (data === "true") {
+                debugger
+                $.get("/products/" + id + "/inventory", function (inventoryData) {
+                    if (inventoryData === "true") {
+                        debugger
                         description += " - Available";
                     } else {
                         description += " - Sold Out";
